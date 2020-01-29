@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Grid Margin="10" RelativeLayout.XConstraint="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ImageButton IsEnabled="False" x:Name="buttonLamp" Clicked="buttonLamp_Clicked" Grid.Row="0" Grid.Column="0" Source="myLamp.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ImageButton IsEnabled="False" x:Name="buttonSwitch" Clicked="buttonSwitch_Clicked" Grid.Row="0" Grid.Column="1" Source="mySwitch.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ImageButton IsEnabled="False" x:Name="buttonWindows" Clicked="buttonWindows_Clicked" Grid.Row="1" Grid.Column="0" Source="myWindow.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ImageButton IsEnabled="False" x:Name="buttonSensors" Clicked="buttonSensors_Clicked" Grid.Row="1" Grid.Column="1" Source="mySensors.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ImageButton IsEnabled="False" x:Name="button3dPrinter" Clicked="button3dPrinter_Clicked" Grid.Row="2" Grid.Column="0" Source="my3D.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ImageButton IsEnabled="True" x:Name="buttonSettings" Clicked="buttonSettings_Clicked" Grid.Row="2" Grid.Column="1" Source="mySettings.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Loading..." x:Name="status" Grid.Row="3" Grid.ColumnSpan="2"/>
+            <ActivityIndicator Grid.ColumnSpan="2" Grid.RowSpan="4"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.Page2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Padding="5" Grid.Row="0" BackgroundColor="LightGray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="_backButton" Clicked="_backButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Source="myBack.png" Grid.Column="0"/>
+                    <Label x:Name="name" FontSize="20" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">Lamp1</Label>
+                    <ImageButton x:Name="_refreshButton" Clicked="_refreshButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Source="myReset.png" Grid.Column="2"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TableView Grid.Row="0">
+                            <TableRoot>
+                                <TableSection>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label FontSize="20" Text="Name" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                            <Button  Grid.Column="1" x:Name="saveName" Clicked="saveName_Clicked" HorizontalOptions="End" Text="Save"/>
+                                            <Editor x:Name="nameEditor" HorizontalOptions="Fill" Grid.Column="2" VerticalOptions="Center"/>
+                                        </Grid>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label FontSize="20" Text="Auto" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                            <Switch Toggled="autoSwitch_Toggled" x:Name="autoSwitch" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                                        </Grid>
+                                    </ViewCell>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label FontSize="20" Text="Enabled" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                            <Switch Toggled="enableSwitch_Toggled" x:Name="enableSwitch" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </TableSection>
+                            </TableRoot>
+                        </TableView>
+                        <Grid x:Name="configuratorField" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="Configurator" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20"/>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <ImageButton Padding="6" x:Name="buttonPlus" Clicked="buttonPlus_Clicked" Grid.Column="0" Source="myPlus.png" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+                                <ImageButton Padding="6" x:Name="saveButton" Clicked="saveButton_Clicked" Grid.Column="1" Source="mySave.png" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+                                <ImageButton Padding="6" x:Name="buttonMinus" Clicked="buttonMinus_Clicked" Grid.Column="2" Source="myMinus.png" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+                            </Grid>
+                            <ScrollView Grid.Row="2">
+                                <TableView x:Name="configuratorTable">
+
+                                </TableView>
+                            </ScrollView>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

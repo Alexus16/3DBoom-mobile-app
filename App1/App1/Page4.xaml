@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.Page4">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Padding="5,5,5,5" Grid.Row="0" BackgroundColor="LightGray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="_backButton" Clicked="_backButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Source="myBack.png" Grid.Column="0"/>
+                    <Label FontSize="20" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">SETTINGS</Label>
+                    <ImageButton VerticalOptions="Center" HorizontalOptions="Center" Source="myReset.png" Grid.Column="2"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <TableView>
+                        <TableRoot>
+                            <TableSection>
+                                <ViewCell>
+                                    <Button Text="Reset all settings" Clicked="Button_Clicked"/>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </Grid>
+                <ActivityIndicator x:Name="_activityInd" IsRunning="False" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Grid.RowSpan="2"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

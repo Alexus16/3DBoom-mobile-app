@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.Page3">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="IP adress of server:" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry x:Name="ip1" Grid.Column="0" MaxLength="3"/>
+                <Label VerticalTextAlignment="End" Text="." Grid.Column="1" FontSize="30"/>
+                <Entry x:Name="ip2" Grid.Column="2" MaxLength="3"/>
+                <Label VerticalTextAlignment="End" Text="." Grid.Column="3" FontSize="30"/>
+                <Entry x:Name="ip3" Grid.Column="4" MaxLength="3"/>
+                <Label VerticalTextAlignment="End" Text="." Grid.Column="5" FontSize="30"/>
+                <Entry x:Name="ip4" Grid.Column="6" MaxLength="3"/>
+            </Grid>
+            <Label Text="User" HorizontalOptions="Center" FontSize="25"/>
+            <Entry x:Name="user"/>
+            <Label Text="Password" HorizontalOptions="Center" FontSize="25"/>
+            <Entry x:Name="password" IsPassword="True"/>
+            <Button Clicked="Button_Clicked" Text="Save" FontSize="20" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

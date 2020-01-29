@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.Page5">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Padding="5,5,5,5" Grid.Row="0" BackgroundColor="LightGray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="_backButton" Clicked="_backButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Source="myBack.png" Grid.Column="0"/>
+                    <Label FontSize="20" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">EXECUTORS</Label>
+                    <ImageButton x:Name="_refreshButton" Clicked="_refreshButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Source="myReset.png" Grid.Column="2"/>
+                </Grid>
+                <ContentView Grid.Row="1" x:Name="mainField">
+                    <TableView x:Name="mainTable">
+                        <TableRoot>
+                            <TableSection>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" FontAttributes="Bold" FontSize="20" Text="Lamp1" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
+                                        <ImageButton BackgroundColor="White" Clicked="ImageButton_Clicked" Source="mySettings_small.png" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                        <Switch Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </ViewCell>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" FontAttributes="Bold" FontSize="20" Text="Lamp2" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
+                                        <ImageButton BackgroundColor="White" Source="mySettings_small.png" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                        <Switch Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </ViewCell>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="60"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" FontAttributes="Bold" FontSize="20" Text="Lamp3" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
+                                        <ImageButton BackgroundColor="White" Source="mySettings_small.png" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                        <Switch Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    </Grid>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </ContentView>
+                <ActivityIndicator x:Name="_activityInd" IsRunning="False" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Grid.RowSpan="2"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

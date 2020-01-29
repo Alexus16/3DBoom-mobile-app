@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.Page7">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Padding="5" Grid.Row="0" BackgroundColor="LightGray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton x:Name="_backButton" Clicked="_backButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Source="myBack.png" Grid.Column="0"/>
+                    <Label x:Name="name" FontSize="20" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">3D Printer</Label>
+                    <ImageButton x:Name="_refreshButton" Clicked="_refreshButton_Clicked" VerticalOptions="Center" HorizontalOptions="Center" Source="myReset.png" Grid.Column="2"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ContentView x:Name="field" Grid.Row="0">
+
+                    </ContentView>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ImageButton Padding="5" x:Name="_upButton" Clicked="_upButton_Clicked" Source="myUp.png" Grid.Row="0"/>
+                        <ImageButton Padding="5" x:Name="_enterButton" Clicked="_enterButton_Clicked" Source="myClick.png" Grid.Row="1"/>
+                        <ImageButton Padding="5" x:Name="_downButton" Clicked="_downButton_Clicked" Source="myDown.png" Grid.Row="2"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
