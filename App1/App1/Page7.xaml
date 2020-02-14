@@ -28,7 +28,9 @@
                             <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <ContentView x:Name="field" Grid.Row="0">
-
+                        <WebView x:Name="webView1">
+                            
+                        </WebView>
                     </ContentView>
                     <Grid Grid.Row="1">
                         <Grid.RowDefinitions>

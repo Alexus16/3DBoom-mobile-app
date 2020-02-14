@@ -26,27 +26,19 @@ namespace App1
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
-            Core.Initialize();
-            ipServer = App.Current.Properties["ipServer"].ToString();
-            LibVLC _libVLC = new LibVLC();
-            MediaPlayer _mediaPlayer = new MediaPlayer(_libVLC) { EnableHardwareDecoding = true };
-
-            VideoView _videoView = new VideoView() { MediaPlayer = _mediaPlayer };
-            field.Content = _videoView;
-            var media = new Media(_libVLC, $"http://{ipServer}:8081/", FromType.FromLocation);
-            DisplayAlert("source", $"http://{ipServer}:8081/", "OK");
-            _videoView.MediaPlayer.Play(media);
+            ipServer = "192.168.10.220";
+            webView1.Source = "http://192.168.10.220/";
+            webView1.HorizontalOptions = LayoutOptions.Center;
         }
 
         private void _upButton_Clicked(object sender, EventArgs e)
         {
             try
             { 
-                string str = "up";
+                string str = "Left";
                 byte[] data = Encoding.Unicode.GetBytes(str);
-            client = new TcpClient();
-                client.Connect(ipServer, 8082);
+                client = new TcpClient();
+                client.Connect(ipServer, 1234);
                 NetworkStream stream = client.GetStream();
                 stream.Write(data, 0, data.Length);
                 stream.Close();
@@ -59,10 +51,10 @@ namespace App1
         {
             try
             {
-                string str = "enter";
+                string str = "Click";
                 byte[] data = Encoding.Unicode.GetBytes(str);
                 client = new TcpClient();
-                client.Connect(ipServer, 8082);
+                client.Connect(ipServer, 1234);
                 NetworkStream stream = client.GetStream();
                 stream.Write(data, 0, data.Length);
                 stream.Close();
@@ -75,10 +67,10 @@ namespace App1
         {
             try
             { 
-            string str = "down";
+            string str = "Right";
             byte[] data = Encoding.Unicode.GetBytes(str);
             client = new TcpClient();
-            client.Connect(ipServer, 8082);
+            client.Connect(ipServer, 1234);
             NetworkStream stream = client.GetStream();
             stream.Write(data, 0, data.Length);
             stream.Close();
