@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"          
              mc:Ignorable="d"
              x:Class="App1.Page7">
     <ContentPage.Content>
@@ -38,9 +38,15 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <ImageButton Padding="5" x:Name="_upButton" Clicked="_upButton_Clicked" Source="myUp.png" Grid.Row="0"/>
-                        <ImageButton Padding="5" x:Name="_enterButton" Clicked="_enterButton_Clicked" Source="myClick.png" Grid.Row="1"/>
-                        <ImageButton Padding="5" x:Name="_downButton" Clicked="_downButton_Clicked" Source="myDown.png" Grid.Row="2"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Padding="5" x:Name="_playButton" Clicked="_playButton_Clicked" Source="nyLamp.png" Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <ImageButton Padding="5" x:Name="_stopButton" Clicked="_stopButton_Clicked" Source="myStop.png" Grid.Row="0" Grid.Column="0"/>
+                        <ImageButton Padding="5" x:Name="_pauseButton" Clicked="_pauseButton_Clicked" Source="myPause.png" Grid.Row="0" Grid.Column="1"/>
+                        <ImageButton Padding="5" x:Name="_homeButton" Clicked="_homeButton_Clicked" Source="myHome.png" Grid.Row="2" Grid.Column="0"/>
+                        <ImageButton Padding="5" x:Name="_rebootButton" Clicked="_rebootButton_Clicked" Source="myReboot.png" Grid.Row="2" Grid.Column="1"/>
                     </Grid>
                 </Grid>
             </Grid>

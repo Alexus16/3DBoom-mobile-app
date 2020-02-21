@@ -159,7 +159,7 @@ namespace App1
             {
                 string[] actions = { "And", "Or", "Not", "+", "-", "/", "*", "=", ">", "<", ">=", "<=" };
                 string typeLink = await DisplayActionSheet("Type of link", "Cancel", null, actions);
-                int numberLink = 0;
+                int numberLink = -1;
                 for (int i = 0; i < actions.Length; i++)
                 {
                     if (actions[i] == typeLink)
@@ -168,36 +168,39 @@ namespace App1
                         break;
                     }
                 }
-                int valueOfElements;
-
-                if (numberLink == 2)
-                    valueOfElements = 1;
-                else
-                    valueOfElements = 2;
-
-                if (valueOfElements == 1)
+                if (numberLink != -1)
                 {
-                    string element = await DisplayActionSheet("Item", "Cancel", null, namesArr);
-                    if (element != "Cancel")
+                    int valueOfElements;
+
+                    if (numberLink == 2)
+                        valueOfElements = 1;
+                    else
+                        valueOfElements = 2;
+
+                    if (valueOfElements == 1)
                     {
-                        int tempId = Convert.ToInt32(element.Split(':')[1]);
-                        lampOfThisPage.conf.addItemLink(tempId, numberLink);
-                    }
-                }
-                else
-                {
-                    string element1 = await DisplayActionSheet("First item", "Cancel", null, namesArr);
-                    if (element1 != "Cancel")
-                    {
-                        int tempId1 = Convert.ToInt32(element1.Split(':')[1]);
-                        string element2 = await DisplayActionSheet("Second item", "Cancel", null, namesArr);
-                        if (element2 != "Cancel")
+                        string element = await DisplayActionSheet("Item", "Cancel", null, namesArr);
+                        if (element != "Cancel")
                         {
-                            int tempId2 = Convert.ToInt32(element2.Split(':')[1]);
-                            lampOfThisPage.conf.addItemLink(tempId1, tempId2, numberLink);
+                            int tempId = Convert.ToInt32(element.Split(':')[1]);
+                            lampOfThisPage.conf.addItemLink(tempId, numberLink);
                         }
                     }
-                 }
+                    else
+                    {
+                        string element1 = await DisplayActionSheet("First item", "Cancel", null, namesArr);
+                        if (element1 != "Cancel")
+                        {
+                            int tempId1 = Convert.ToInt32(element1.Split(':')[1]);
+                            string element2 = await DisplayActionSheet("Second item", "Cancel", null, namesArr);
+                            if (element2 != "Cancel")
+                            {
+                                int tempId2 = Convert.ToInt32(element2.Split(':')[1]);
+                                lampOfThisPage.conf.addItemLink(tempId1, tempId2, numberLink);
+                            }
+                        }
+                    }
+                }
             }
             refreshTable();
             buttonPlus.IsEnabled = true;

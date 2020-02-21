@@ -71,6 +71,7 @@ namespace App1
                 {
                     status.Text = "Error of connection to server";
                     status.TextColor = Color.Red;
+                    await DisplayAlert("Fatal", $"IP:{DataBase.__ip}\nUSER:{DataBase.__user}\nPASSWORD:{DataBase.__password}", "OK");
                 }
 
             }

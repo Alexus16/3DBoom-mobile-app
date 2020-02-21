@@ -255,13 +255,22 @@ namespace App1
                 if (items[i].id == _id)
                 {
                     if (items[i].it1 != null) deleteItemWithDaughtersWithID(items[i].it1.id);
-                    items[i].it1 = null;
-                    if (items[i].it2 != null) deleteItemWithDaughtersWithID(items[i].it2.id);
-                    items[i].it2 = null;
-                    deleteItemWithID(_id);
+                    //items[i].it1 = null;
+                    //items[i].it2 = null;
                     break;
                 }
             }
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].id == _id)
+                {
+                    if (items[i].it2 != null) deleteItemWithDaughtersWithID(items[i].it2.id);
+                    //items[i].it1 = null;
+                    //items[i].it2 = null;
+                    break;
+                }
+            }
+            deleteItemWithID(_id);
         }
     }
 }
