@@ -101,13 +101,17 @@ namespace App1
                     {
                         new ColumnDefinition{Width = GridLength.Star },
                         new ColumnDefinition{Width = GridLength.Auto },
+                        new ColumnDefinition{Width = 40 },
                         new ColumnDefinition{Width = 60 }
                     }
                 };
                 grid.Children.Add(new Label { HorizontalOptions = LayoutOptions.Start, VerticalOptions = LayoutOptions.Center, Text = tempText, FontSize = 25 }, 0, 0);
                 grid.Children.Add(new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "id:" + tempId, FontSize = 10, TextColor = Color.Gray }, 1, 0);
                 Label tempLabel = new Label() { Text = Convert.ToString(tempValue), FontSize = 20, VerticalOptions=LayoutOptions.Center, HorizontalOptions=LayoutOptions.Center };
-                grid.Children.Add(tempLabel, 2, 0);
+                grid.Children.Add(tempLabel, 3, 0);
+                ImageButton tempButton = new ImageButton() { Source = "mySettings_small.png", BackgroundColor = Color.White, HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center };
+                tempButton.Clicked += TempButton_Clicked;
+                grid.Children.Add(tempButton, 2, 0);
                 tempCell = new ViewCell
                 {
                     View = grid
